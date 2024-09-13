@@ -128,10 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="prjcpp01.cpp" />
+    <ClCompile Include="Vehi.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IntOrString.h" />
-    <ClInclude Include="vehi.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="Vehi.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

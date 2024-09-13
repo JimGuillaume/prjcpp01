@@ -1,67 +1,62 @@
 #include <iostream>
-#include "IntOrString.h"
-#include "prjcpp01.h"
+#include "Header.h"
 
 using namespace std;
 
-class vehi
-{
-private:
-    int Km;
-    string Plaq;
-public:
-    string Mcirc;
-
-    void set_km(int t_km)
-    {
-            this->Km = t_km;
-    }
-
-    int get_Km(void)
-    {
-        return this->Km;
-    }
-
-    void set_Plaq(string t_Plaq)
-    {
-        this->Plaq = t_Plaq;
-    }
-
-    string get_Plaq(void)
-    {
-        return this->Plaq;
-    }
-};
-
-
-
-
 int main()
 {
-    // Input Variables
-    vehi test;
+    // Input Variable
+    Vehi test;
+
     int inter_int;
+    int i, j, x, y;
+
     string inter_string;
+
+    bool check;
 
 
     //Input class vehi
     cout << "Date de mise en circulation du vehicule : "; 
     cin >> test.Mcirc;
 
-    cout << "Plaque immatriculation : "; 
-    cin >> inter_string;
+
+    //Securisation d'interface 
+    do 
+    {
+      cout << "Plaque immatriculation : ";
+      cin >> inter_string;
+      if (inter_string[1] == '-')
+      {
+        check = true;
+      }
+      else 
+      {
+        check = false;
+        cout << "WRONG INPUT  deuxieme caractere doit etre un -" << endl;
+      }
+
+    } while (!check);
+
     test.set_Plaq(inter_string);
 
-    cout << "Nombre de Km : "; 
-    cin >> inter_int;
-    while(!IntOrString(inter_int))
+    do
     {
-        cout << "Mauvais input" << endl;
-        cout << "Nombre de Km : ";
-        cin >> inter_int;
-    }
-    test.set_km(inter_int);
+      cout << "Kilometrage : ";
+      cin >> inter_int;
+      x = sizeof(inter_int);
+      y = 0;
+        for (i = 0; i < x; i++)
+        {
+          if (0 <= inter_int[i] <= 9)
+          {
+            y++;
+          }
+        }
 
+    } while (!(y == x));
+    x = 0; y = 0; i = 0;
+    
 
     cout << "\n\t Recapitulatif :" << endl;
     cout << "Date : " << test.Mcirc << endl;
