@@ -11,7 +11,7 @@ private:
 public:
   string Mcirc;
 
-  int set_km(int t_km)
+  void set_km(int t_km)
   {
     this->Km = t_km;
   }

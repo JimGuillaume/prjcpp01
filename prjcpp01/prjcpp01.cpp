@@ -8,8 +8,8 @@ int main()
     // Input Variable
     Vehi test;
 
-    int inter_int;
-    int i, j, x, y;
+    int inter_int = 0;
+    int x, y;
 
     string inter_string;
 
@@ -44,18 +44,13 @@ int main()
     {
       cout << "Kilometrage : ";
       cin >> inter_int;
-      x = sizeof(inter_int);
-      y = 0;
-        for (i = 0; i < x; i++)
-        {
-          if (0 <= inter_int[i] <= 9)
-          {
-            y++;
-          }
-        }
+      if (inter_int >= 0)
+      {
+        check = true;
+      }else check = false;
 
-    } while (!(y == x));
-    x = 0; y = 0; i = 0;
+    } while (!check);
+    test.set_km(inter_int);
     
 
     cout << "\n\t Recapitulatif :" << endl;

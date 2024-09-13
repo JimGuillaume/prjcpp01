@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="prjcpp01.cpp" />
-    <ClCompile Include="Vehi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
