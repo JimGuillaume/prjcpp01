@@ -1,24 +1,36 @@
+//Open library
 #include <iostream>
+#include <vector>
+//Home Library
 #include "Header.h"
 
 using namespace std;
 
 int main()
 {
-  // Input Variable
-  Vehi tVehi[3];
-  int inter_int = 0;
+  // Input Classe
+  vector <Vehi> TdVehi;
+  Vehi inter_Vehi;
+
+  //Input Variables globales
+  int inter_int = 0, x = 0, size = 0 ;
   string inter_string;
-  bool check;
+  char test;
+  bool check = 0;
 
   system("cls");
   cout << "\tEncodage Systeme" << endl;
+  cout << "Voulez vous rentrer un véhicule ? (y/n) : ";
+  cin >> test;
 
-  for (int x = 0; x < 3; x++)
+  TdVehi.resize(0);
+
+  while(test == 'y' || test == 'Y')
   {
-    cout << "Vehicule N  " << x+1 << endl;
+    x++;
+    cout << "Vehicule N  " << x << endl;
     cout << "Date de mise en circulation du vehicule : ";
-    cin >> tVehi[x].Mcirc;
+    cin >> inter_Vehi.Mcirc;
 
     do
     {
@@ -36,7 +48,9 @@ int main()
 
     } while (!check);
 
-    tVehi[x].set_Plaq(inter_string);
+    inter_Vehi.set_Plaq(inter_string);
+
+
 
     do
     {
@@ -46,20 +60,35 @@ int main()
       {
         check = true;
       }
-      else check = false;
+      else
+      {
+        check = false;
+        cout << "KM NEED TO BE POSITIVE" << endl;
+      }
 
     } while (!check);
-    tVehi[x].set_km(inter_int);
+    inter_Vehi.set_km(inter_int);
+
+    //Input into TD & boucle vérification
+    TdVehi.push_back(inter_Vehi);
+
+    cout << "Encore une Vehicule ? : (y/n)";
+    cin >> test;
   }
 
+
+
   //RECAPITULATIF
+  size = TdVehi.size();
   system("cls");
   cout << "\n\t Recapitulatif :" << endl;
-  for (int x = 0; x < 3; x++)
+  for (int i = 0; i < size; i++)
   {
-    cout << "\t Vehicule N " << x+1 << endl;
-    cout << "Date : " << tVehi[x].Mcirc << endl;
-    cout << "Plaque : " << tVehi[x].get_Plaq() << endl;
-    cout << "Km : " << tVehi[x].get_Km() << endl;
+    cout << "\t Vehicule N " << i + 1 << endl;
+    cout << "Date : " << TdVehi[i].Mcirc << endl;
+    cout << "Plaque : " << TdVehi[i].get_Plaq() << endl;
+    cout << "Km : " << TdVehi[i].get_Km() << endl;
   }
+  TdVehi.clear();
 }
+
