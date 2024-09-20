@@ -10,10 +10,12 @@ int main()
 {
   // Input Classe
   vector <Vehi> TdVehi;
+  vector <int> TdPointeur;
   Vehi inter_Vehi;
+  Vehi* pVehi = 0;
 
   //Input Variables globales
-  int inter_int = 0, x = 0, size = 0 ;
+  int inter_int = 0, x = 0;
   string inter_string;
   char test;
   bool check = 0;
@@ -24,6 +26,7 @@ int main()
   cin >> test;
 
   TdVehi.resize(0);
+  TdPointeur.resize(0);
 
   while(test == 'y' || test == 'Y')
   {
@@ -48,7 +51,14 @@ int main()
 
     } while (!check);
 
-    inter_Vehi.set_Plaq(inter_string);
+    try
+    {
+      inter_Vehi.set_Plaq(inter_string);
+    }
+    catch (...)
+    {
+
+    }
 
 
 
@@ -79,10 +89,9 @@ int main()
 
 
   //RECAPITULATIF
-  size = TdVehi.size();
   system("cls");
   cout << "\n\t Recapitulatif :" << endl;
-  for (int i = 0; i < size; i++)
+  for (int i = 0; i < TdVehi.size(); i++)
   {
     cout << "\t Vehicule N " << i + 1 << endl;
     cout << "Date : " << TdVehi[i].Mcirc << endl;
