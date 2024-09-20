@@ -10,7 +10,9 @@ int main()
 {
   // Input Classe
   vector <Vehi> TdVehi;
+  vector <int> TdPointeur;
   Vehi inter_Vehi;
+  Vehi* pVehi = 0;
 
   //Input Variables globales
   int inter_int = 0, x = 0, size = 0 ;
@@ -24,6 +26,7 @@ int main()
   cin >> test;
 
   TdVehi.resize(0);
+  TdPointeur.resize(0);
 
   while(test == 'y' || test == 'Y')
   {
