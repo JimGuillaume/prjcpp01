@@ -25,11 +25,13 @@ int main()
   cout << "Voulez vous rentrer un véhicule ? (y/n) : ";
   cin >> test;
 
+  //Sécurisation Tableai=u Dynamique
   TdVehi.resize(0);
   TdPointeur.resize(0);
 
   while(test == 'y' || test == 'Y')
   {
+
     x++;
     cout << "Vehicule N  " << x << endl;
     cout << "Date de mise en circulation du vehicule : ";
