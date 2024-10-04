@@ -86,7 +86,7 @@ int main()
     if (newOk = false)
       cout << "Memory Leak" << endl;
   }
-  
+
 
   //RECAPITULATIF
   system("cls");
