@@ -24,7 +24,9 @@ int main()
 
   system("cls");
   cout << "\tEncodage Systeme" << endl;
-  //Sécurisation Tableai=u Dynamique
+  cout << "Voulez vous rentrer un véhicule ? (y/n) : ";
+  cin >> test;
+
   TdVehi.resize(0);
 
   try
