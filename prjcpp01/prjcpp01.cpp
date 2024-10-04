@@ -16,7 +16,7 @@ int main()
 
   //Input Variables globales
   int inter_int = 0, x = 0;
-  string inter_string;
+  string inter_string1, inter_string2;
   char test;
   bool check = 0;
   bool crash = false;
@@ -34,31 +34,19 @@ int main()
     do
     {
       newOk = false;
-
-      pinter_Vehi = new Vehi();
-      newOk = true;
       x++;
       cout << "\tVehicule N  " << x << endl;
       cout << "Date de mise en circulation du vehicule : ";
-      cin >> pinter_Vehi->Mcirc;
+      cin >> inter_string1;
 
       do
       {
         cout << "Plaque immatriculation : ";
-        cin >> inter_string;
-        if (inter_string[1] == '-')
-        {
-          check = true;
-        }
-        else
-        {
-          check = false;
-          cout << "WRONG INPUT  deuxieme caractere doit etre un -" << endl;
-        }
+        cin >> inter_string2;
 
       } while (!check);
-      pinter_Vehi->set_Plaq(inter_string);
 
+      new Vehi(inter_string1, inter_string2);
 
       do
       {
@@ -75,7 +63,7 @@ int main()
         }
 
       } while (!check);
-      pinter_Vehi->set_km(inter_int);
+      pinter_Vehi->set_Km(inter_int);
 
       //Input into TD & boucle vérification
       TdVehi.push_back(pinter_Vehi);
